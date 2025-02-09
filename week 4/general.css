@@ -1,0 +1,46 @@
+
+/* Element Selector */
+h2 {
+    color:green;
+    font-size : 50px;
+    background:none;
+    text-align: center;
+
+}
+li {
+    font-size: 15px;
+    color:blueviolet;
+    background-color:yellow;
+    text-align: center;
+}
+table {
+    font-size: 30px;
+}
+/* body styling */
+body {
+    border: 3px solid black;
+    padding: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+h3 {
+    font-size:30px;
+    color:brown;
+    text-align: center;
+    
+}
+/* Class selectors */
+
+button {
+    color:aqua;
+    background-color: black;
+}
+
+#main-title {
+    color:cyan;
+}
+
+/* Grouping Selectors */
+h1,h2,h3 {
+    background-color: azure;
+}
+
