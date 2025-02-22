@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Application</title>
+    <link rel="stylesheet" href="generalweek6.css">
+    <style>
+        body {
+            background-color: aquamarine;
+        }
+    </style>
+    <script src="./actions/action_it.js"></script>  <!-- External script -->
+</head>
+<body onload="greet()">
+    <button onclick="alert('Hello World')">Click me</button>
+    <p id="text">This is the first HTML, CSS, and JavaScript Fusion</p>
+    <button onclick="toggleText()">Change Text</button>
+    <button id="click">Internal JavaScript click</button>
+    
+    <!-- Color Picker -->
+    <input type="color" id="colorPicker" value="#ADD8E6">
+    <button onclick="setBackgroundColor()">Set Background Color</button>
+    
+    <button onclick="changeBackground()">Random Background Color</button>
+
+    <script>
+        function greet() {
+            alert("Welcome to the Dynamic world");
+        }
+
+        function randomColor() {
+            let letters = "0123456789ABCDEF";
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function changeBackground() {
+            document.body.style.backgroundColor = randomColor();
+        }
+
+        function setBackgroundColor() {
+            let colorInput = document.getElementById("colorPicker").value;
+            if (colorInput) {
+                document.body.style.backgroundColor = colorInput;
+            } else {
+                alert("Invalid color! Setting default color.");
+                document.body.style.backgroundColor = "#ADD8E6";  // Default color
+            }
+        }
+
+        function toggleText() {
+            let textElement = document.getElementById("text");
+            if (textElement.innerHTML === "This is the first HTML, CSS, and JavaScript Fusion") {
+                textElement.innerHTML = "I am testing Inline JavaScript";
+            } else {
+                textElement.innerHTML = "This is the first HTML, CSS, and JavaScript Fusion";
+            }
+        }
+
+        // Selecting the button by ID
+        const buttonId = document.getElementById("click");
+
+        buttonId.onclick = function() {
+            alert("Button was clicked");
+        };
+
+        buttonId.onmouseover = function() {
+            buttonId.style.color = "red";
+        };
+
+        buttonId.onmouseout = function() {
+            buttonId.style.color = "yellow";
+        };
+    </script>
+</body>
+</html>
